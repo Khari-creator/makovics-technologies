@@ -1,27 +1,37 @@
 import Link from "next/link";
-import { BlogPost } from "@/components/data/blogPosts";
+
+export interface BlogPostSummary {
+  title: string;
+  slug: string;
+  excerpt: string;
+  date: string;
+}
 
 interface BlogCardProps {
-  post: BlogPost;
+  post: BlogPostSummary;
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="block rounded-2xl border border-gray-200 p-8 bg-white shadow-sm hover:shadow-lg transition"
-    >
-      <h2 className="text-2xl font-bold text-gray-900">
-        {post.title}
-      </h2>
+    <article className="bg-white rounded-xl border border-gray-200 hover:shadow-md transition">
+      <div className="p-6">
+        <p className="text-sm text-gray-500">{post.date}</p>
 
-      <p className="mt-3 text-gray-600">
-        {post.excerpt}
-      </p>
+        <h2 className="mt-2 text-xl font-bold text-gray-900">
+          {post.title}
+        </h2>
 
-      <div className="mt-6 text-sm font-semibold text-blue-600">
-        Read article →
+        <p className="mt-4 text-gray-600">
+          {post.excerpt}
+        </p>
+
+        <Link
+          href={`/blog/${post.slug}`}
+          className="inline-block mt-6 text-blue-600 font-semibold"
+        >
+          Read more →
+        </Link>
       </div>
-    </Link>
+    </article>
   );
 }

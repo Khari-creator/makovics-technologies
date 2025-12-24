@@ -1,22 +1,18 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { blogPosts } from "@/components/data/blogPosts";
-
-interface Params {
-  params: {
-    slug: string;
-  };
-}
 
 /**
  * GET /api/blog/[slug]
  * Returns a single blog post
  */
 export async function GET(
-  _req: Request,
-  { params }: Params
+  _request: NextRequest,
+  context: { params: Promise<{ slug: string }> }
 ) {
+  const { slug } = await context.params;
+
   const post = blogPosts.find(
-    (p) => p.slug === params.slug
+    (p) => p.slug === slug
   );
 
   if (!post) {

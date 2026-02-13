@@ -9,7 +9,7 @@ export default function ContactForm() {
   const [error, setError] = useState("");
   const formAction =
     process.env.NEXT_PUBLIC_CONTACT_FORM_ACTION ||
-    "https://makovics-technologies-git-main-moses-omondis-projects.vercel.app/api/contact";
+    "https://makovics-technologies.vercel.app/api/contact";
   const fallbackRecipient =
     process.env.NEXT_PUBLIC_CONTACT_RECEIVER || "info@makovicstech.com";
 
@@ -33,10 +33,11 @@ export default function ContactForm() {
       if (formAction) {
         const res = await fetch(formAction, {
           method: "POST",
-          body: formData,
           headers: {
             Accept: "application/json",
+            "Content-Type": "application/json",
           },
+          body: JSON.stringify(payload),
         });
 
         if (!res.ok) throw new Error("Failed to send");

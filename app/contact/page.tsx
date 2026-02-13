@@ -6,6 +6,17 @@ import ContactForm from "@/components/contact/ContactForm";
  * Business inquiry and consultation page
  */
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Makovics Technologies to discuss your software, automation, or digital transformation needs.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
+
 export default function ContactPage() {
   return (
     <main>
@@ -42,13 +53,13 @@ export default function ContactPage() {
 
             <ul className="mt-8 space-y-4 text-gray-700">
               <li>
-                <strong>Email:</strong> info@makovicstechnologies.com
+                <strong>Email:</strong> info@makovicstech.com
               </li>
               <li>
                 <strong>Phone:</strong> +254 708500398
               </li>
               <li>
-                <strong>phone:</strong> +254 719648585
+                <strong>Phone:</strong> +254 104451714
               </li>
               <li>
                 <strong>Location:</strong> Nairobi, Kenya

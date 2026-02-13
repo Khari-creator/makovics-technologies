@@ -43,9 +43,9 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-4">Contact</h4>
           <ul className="space-y-2 text-sm">
-            <li>Email: info@makovicstechnologies.com</li>
+            <li>Email: info@makovicstech.com</li>
             <li>Phone: +254 708500398</li>
-            <li>+254 719648585</li>
+            <li>+254 104451714</li>
             <li>
               <Link
                 href="/contact"

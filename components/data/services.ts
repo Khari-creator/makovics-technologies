@@ -1,38 +1,74 @@
-/**
- * Services offered by Makovics Technologies
- * ----------------------------------------
- * Centralized data structure for scalability.
- */
-
 export const services = [
   {
     title: "Software Development",
     description:
       "Custom software solutions designed to automate operations, improve efficiency, and support business growth.",
+    tags: ["Custom Systems", "Enterprise Software", "Scalable Apps"],
   },
   {
     title: "Web Design & Development",
     description:
       "Modern, responsive, and performance-optimized websites and web applications built with cutting-edge technologies.",
+    tags: ["Responsive Design", "UI/UX", "E-commerce"],
   },
   {
     title: "Mobile App Development",
     description:
-      "Cross-platform mobile applications that deliver seamless user experiences on Android and iOS.",
+      "Cross-platform mobile applications delivering seamless experiences on Android and iOS.",
+    tags: ["Flutter", "React Native", "iOS & Android"],
   },
   {
-    title: "API Integration",
+    title: "API Integrations",
     description:
-      "Secure and reliable API integrations that connect systems, services, and third-party platforms.",
+      "MPESA API integrations and ETIMS API integrations for seamless payments and compliance workflows.",
+    tags: ["MPESA API Integrations", "ETIMS API Integrations"],
   },
   {
-    title: "Website Maintenance",
+    title: "Software Installation",
     description:
-      "Ongoing support, updates, performance monitoring, and security maintenance for digital platforms.",
+      "Professional software deployment, configuration, and onboarding to ensure smooth operations.",
+    tags: ["System Setup", "Configuration", "Training"],
   },
   {
-    title: "Digital Marketing",
+    title: "CCTV Installation",
     description:
-      "Data-driven digital marketing strategies to increase visibility, engagement, and customer acquisition.",
+      "Comprehensive surveillance solutions for homes and businesses with modern monitoring systems.",
+    tags: ["HD Cameras", "Remote Monitoring", "24/7 Support"],
+  },
+  {
+    title: "IT Consultancy",
+    description:
+      "Expert guidance to help businesses make informed technology decisions and scale confidently.",
+    tags: ["Tech Strategy", "Digital Transformation", "Process Optimization"],
+  },
+  {
+    title: "IT Infrastructure Audit",
+    description:
+      "Comprehensive audits to assess infrastructure health, performance, and readiness.",
+    tags: ["Network Review", "Risk Assessment", "Optimization"],
+  },
+  {
+    title: "Security Penetration Testing",
+    description:
+      "Proactive testing to identify vulnerabilities and strengthen your security posture.",
+    tags: ["Vulnerability Testing", "Threat Analysis", "Remediation Guidance"],
+  },
+  {
+    title: "System Quality Assurance",
+    description:
+      "Rigorous QA to ensure systems are stable, reliable, and production-ready.",
+    tags: ["Functional Testing", "Performance", "Release Validation"],
+  },
+  {
+    title: "Bulk SMS",
+    description:
+      "Scalable bulk messaging for alerts, notifications, and customer engagement.",
+    tags: ["OTP & Alerts", "Campaigns", "Delivery Reports"],
+  },
+  {
+    title: "Digital Cyber Cafe",
+    description:
+      "Reliable cyber cafe services for online applications, eLearning, printing, and digital support.",
+    tags: ["Online Applications", "Printing & Scanning", "Cyber Training"],
   },
 ];

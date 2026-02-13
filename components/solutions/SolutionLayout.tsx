@@ -1,91 +1,94 @@
-import CallToAction from "@/components/sections/CallToAction";
-
 interface SolutionLayoutProps {
   title: string;
-  subtitle: string;
+  badge?: string;
   description: string;
   features: string[];
-  audience: string[];
-  benefits: string[];
 }
 
 export default function SolutionLayout({
   title,
-  subtitle,
+  badge,
   description,
   features,
-  audience,
-  benefits,
 }: SolutionLayoutProps) {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-gray-950 text-white py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-extrabold">{title}</h1>
-          <p className="mt-4 text-xl text-blue-400">{subtitle}</p>
-          <p className="mt-6 max-w-3xl text-lg text-gray-300">
-            {description}
-          </p>
-        </div>
-      </section>
+      {/* HERO */}
+      <section className="py-28 bg-gradient-to-br from-white to-blue-50">
+        <div className="max-w-7xl mx-auto px-6 grid gap-16 lg:grid-cols-2 items-center">
 
-      {/* Core Features */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900">
-            Core System Modules
-          </h2>
+          {/* Left content */}
+          <div>
+            {badge && (
+              <span className="inline-block mb-4 rounded-full bg-blue-100 px-4 py-1 text-sm font-semibold text-blue-700">
+                {badge}
+              </span>
+            )}
 
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <li
-                key={feature}
-                className="rounded-xl border border-gray-200 p-5 bg-gray-50"
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+              {title}
+            </h1>
+
+            <p className="mt-6 max-w-xl text-lg text-gray-600 leading-relaxed">
+              {description}
+            </p>
+
+            {/* Feature list */}
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+              {features.map((feature) => (
+                <li
+                  key={feature}
+                  className="flex items-start gap-3 text-gray-700"
+                >
+                  <span className="mt-1 h-5 w-5 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs">
+                    ✓
+                  </span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA */}
+            <div className="mt-10">
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700 transition"
               >
-                {feature}
-              </li>
-            ))}
-          </ul>
+                Request Demo →
+              </a>
+            </div>
+          </div>
+
+          {/* Right visual card */}
+          <div className="relative">
+            <div className="rounded-3xl border border-gray-200 bg-white p-10 shadow-xl">
+              <h3 className="text-lg font-bold text-gray-900">
+                Why this solution works
+              </h3>
+
+              <p className="mt-4 text-gray-600">
+                Designed for real operational workflows, scalability, and long-term
+                business growth.
+              </p>
+
+              <div className="mt-6 grid gap-4 text-sm text-gray-700">
+                <div className="rounded-lg bg-gray-50 p-4">
+                  ✔ Fast deployment
+                </div>
+                <div className="rounded-lg bg-gray-50 p-4">
+                  ✔ Secure & scalable architecture
+                </div>
+                <div className="rounded-lg bg-gray-50 p-4">
+                  ✔ Ongoing support & updates
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* Who It’s For */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900">
-            Who This Solution Is For
-          </h2>
 
-          <ul className="mt-8 space-y-3 text-lg text-gray-700">
-            {audience.map((item) => (
-              <li key={item}>• {item}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Benefits */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-gray-900">
-            Business Benefits
-          </h2>
-
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-            {benefits.map((benefit) => (
-              <li
-                key={benefit}
-                className="rounded-xl bg-blue-50 p-5 text-blue-900"
-              >
-                {benefit}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <CallToAction />
     </main>
   );
 }

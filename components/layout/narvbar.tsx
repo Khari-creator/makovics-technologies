@@ -6,9 +6,10 @@ import { useState } from "react";
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "Digital Cyber Cafe", href: "/services/digital-cyber-cafe" },
   { name: "Solutions", href: "/solutions" },
-  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -22,11 +23,14 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           
           {/* Logo */}
-          <Link href="/" className="text-xl font-extrabold text-gray-900">
-            Makovics<span className="text-blue-600">Tech</span>
+          <Link href="/" className="flex items-center">
+            <span className="text-lg font-bold text-gray-900">
+              Makovics
+              <span className="text-blue-600">Tech</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

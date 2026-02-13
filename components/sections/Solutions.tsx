@@ -33,9 +33,10 @@ export default function Solutions() {
         <div className="grid gap-10 sm:grid-cols-2">
           {solutions.map((solution) => (
             <SolutionCard
-              key={solution.name}
-              name={solution.name}
+              key={solution.slug}
+              title={solution.title}
               description={solution.description}
+              slug={solution.slug}
             />
           ))}
         </div>

@@ -59,7 +59,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="/services"
+            href="/solutions"
             className="inline-flex justify-center items-center rounded-lg border border-gray-600 px-8 py-3 font-semibold text-gray-200 hover:border-gray-400 hover:text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500"
           >
             View Our Solutions

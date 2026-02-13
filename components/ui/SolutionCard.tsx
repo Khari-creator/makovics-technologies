@@ -1,35 +1,34 @@
-/**
- * SolutionCard Component
- * ----------------------
- * Used to present a full software system.
- */
-import Link from "next/link";
+ import Link from "next/link";
 
 interface SolutionCardProps {
-  name: string;
+  title: string;
   description: string;
+  slug: string;
 }
 
 export default function SolutionCard({
-  name,
+  title,
   description,
+  slug,
 }: SolutionCardProps) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-md transition-shadow">
-      <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-        {name}
+    <Link
+      href={`/solutions/${slug}`}
+      className="group flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+    >
+      
+      {/* Text Content */}
+      <h3 className="text-2xl font-extrabold text-gray-900 group-hover:text-blue-600 transition">
+        {title}
       </h3>
 
-      <p className="text-gray-600 leading-relaxed mb-6">
+      <p className="mt-4 text-gray-600 leading-relaxed flex-grow">
         {description}
       </p>
-     <Link
-       href="/solutions"
-      className="inline-block text-sm font-semibold text-blue-600 hover:underline"
-     >
-      Learn more →
-       </Link>
 
-    </div>
+     
+    </Link>
+  
+  
   );
 }

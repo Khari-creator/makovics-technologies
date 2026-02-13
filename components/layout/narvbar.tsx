@@ -8,7 +8,6 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Digital Cyber Cafe", href: "/services/digital-cyber-cafe" },
   { name: "Solutions", href: "/solutions" },
   { name: "Contact", href: "/contact" },
 ];

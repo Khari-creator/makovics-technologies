@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   MessageSquare,
-  Monitor,
 } from "lucide-react";
 
 const capabilities = [
@@ -91,13 +90,6 @@ const capabilities = [
     tags: ["OTP & Alerts", "Campaigns", "Delivery Reports"],
     icon: MessageSquare,
   },
-  {
-    title: "Digital Cyber Cafe",
-    description:
-      "Reliable cyber cafe services for online applications, eLearning, printing, and digital support.",
-    tags: ["Online Applications", "Printing & Scanning", "Cyber Training"],
-    icon: Monitor,
-  },
 ];
 
 import type { Metadata } from "next";
@@ -105,7 +97,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Explore our services including software development, web and mobile solutions, API integrations, audits, security testing, QA, bulk SMS, and digital cyber cafe services.",
+    "Explore our services including software development, web and mobile solutions, API integrations, audits, security testing, QA, and bulk SMS.",
   alternates: {
     canonical: "/services",
   },

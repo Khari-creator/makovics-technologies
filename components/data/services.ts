@@ -65,10 +65,4 @@ export const services = [
       "Scalable bulk messaging for alerts, notifications, and customer engagement.",
     tags: ["OTP & Alerts", "Campaigns", "Delivery Reports"],
   },
-  {
-    title: "Digital Cyber Cafe",
-    description:
-      "Reliable cyber cafe services for online applications, eLearning, printing, and digital support.",
-    tags: ["Online Applications", "Printing & Scanning", "Cyber Training"],
-  },
 ];

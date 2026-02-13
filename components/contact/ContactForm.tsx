@@ -114,7 +114,6 @@ export default function ContactForm() {
             <option>Web Design & Development</option>
             <option>Mobile App Development</option>
             <option>POS / Business System</option>
-            <option>Digital Cyber Cafe</option>
             <option>Other</option>
           </select>
         </div>

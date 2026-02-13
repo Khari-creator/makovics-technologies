@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   },
   description:
     "Makovics Technologies provides software development, business automation, POS systems, HR platforms, and enterprise digital solutions.",
+  icons: {
+    icon: "/logo.png",
+  },
   metadataBase: new URL("https://makovicstech.com"),
   alternates: {
     canonical: "/",

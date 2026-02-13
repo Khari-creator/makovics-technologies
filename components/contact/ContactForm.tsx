@@ -7,7 +7,9 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
-  const formAction = process.env.NEXT_PUBLIC_CONTACT_FORM_ACTION || "";
+  const formAction =
+    process.env.NEXT_PUBLIC_CONTACT_FORM_ACTION ||
+    "https://makovics-technologies-git-main-moses-omondis-projects.vercel.app/api/contact";
   const fallbackRecipient =
     process.env.NEXT_PUBLIC_CONTACT_RECEIVER || "info@makovicstech.com";
 

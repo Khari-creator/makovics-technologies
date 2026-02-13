@@ -1,14 +1,31 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+function getCorsHeaders(req: Request) {
+  const origin = req.headers.get("origin") || "*";
+  return {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+}
+
+export function OPTIONS(req: Request) {
+  return new NextResponse(null, {
+    status: 204,
+    headers: getCorsHeaders(req),
+  });
+}
+
 export async function POST(req: Request) {
+  const corsHeaders = getCorsHeaders(req);
   try {
     const { name, email, service, message } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
@@ -24,11 +41,14 @@ export async function POST(req: Request) {
       const isDev = process.env.NODE_ENV !== "production";
       if (isDev) {
         console.warn("Email service is not configured. Skipping send in dev.");
-        return NextResponse.json({ success: true, warning: "Email not configured" });
+        return NextResponse.json(
+          { success: true, warning: "Email not configured" },
+          { headers: corsHeaders }
+        );
       }
       return NextResponse.json(
         { error: "Email service is not configured" },
-        { status: 500 }
+        { status: 500, headers: corsHeaders }
       );
     }
 
@@ -72,13 +92,13 @@ export async function POST(req: Request) {
       },
     });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true }, { headers: corsHeaders });
   } catch (error) {
     console.error("EMAIL ERROR:", error);
     const isDev = process.env.NODE_ENV !== "production";
     return NextResponse.json(
       { error: isDev ? String(error) : "Failed to send message" },
-      { status: 500 }
+      { status: 500, headers: corsHeaders }
     );
   }
 }

@@ -71,11 +71,18 @@ export async function POST(req: Request) {
     const subject = `New Contact Request - ${serviceLabel}`;
     const text = `New Contact Message\n\nName: ${name}\nEmail: ${email}\nService: ${serviceLabel}\n\nMessage:\n${message}\n`;
 
+    const senderDomain = SMTP_USER.split("@")[1];
+    const emailDomain = email.split("@")[1];
+    const replyTo =
+      senderDomain && emailDomain && senderDomain === emailDomain
+        ? `${name} <${email}>`
+        : SMTP_USER;
+
     await transporter.sendMail({
       from: `"Makovics" <${SMTP_USER}>`,
       sender: SMTP_USER,
       to: CONTACT_RECEIVER,
-      replyTo: `${name} <${email}>`,
+      replyTo,
       subject,
       text,
       html: `
